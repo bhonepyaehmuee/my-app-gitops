@@ -9,7 +9,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/bhonepyaehmuee/CircleCI.git
+    repoURL: https://github.com/bhonepyaehmuee/my-app-gitops.git
     targetRevision: main
     path: .
 
