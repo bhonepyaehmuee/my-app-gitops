@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: helloworld
-          image: bownoed/cicd_image:latest
+          image: bownoed/sample-api:451ce1de72da6bbd23dfbb507f476a00838e8edd
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
