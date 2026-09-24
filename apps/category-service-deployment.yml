@@ -17,14 +17,14 @@ spec:
     spec:
       initContainers:
         - name: wait-for-postgres
-          image: busybox:1.36
+          image: bownoed/category-service:dcb1d3753b49f5bdee0a5cd3c20f56a5f120d838
           command: ['sh', '-c', 'until nc -z -w 2 postgres-db 5432; do echo waiting for postgres-db; sleep 2; done;']
         - name: wait-for-config-server
-          image: busybox:1.36
+          image: bownoed/category-service:dcb1d3753b49f5bdee0a5cd3c20f56a5f120d838
           command: ['sh', '-c', 'until nc -z -w 2 config-server 8888; do echo waiting for config-server; sleep 2; done;']
       containers:
         - name: category-service
-          image: bownoed/category-service:latest
+          image: bownoed/category-service:dcb1d3753b49f5bdee0a5cd3c20f56a5f120d838
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082
