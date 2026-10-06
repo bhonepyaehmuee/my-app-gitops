@@ -61,9 +61,20 @@ metadata:
   labels:
     app: api-gateway
 spec:
-  type: ClusterIP
-  ports:
-    - port: 8080
-      targetPort: 8080
+  type: NodePort
+
   selector:
     app: api-gateway
+
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30080
+# spec:
+#   type: ClusterIP
+#   ports:
+#     - port: 8080
+#       targetPort: 8080
+#   selector:
+#     app: api-gateway
