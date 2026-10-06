@@ -69,7 +69,7 @@ metadata:
   namespace: default
   labels:
     app: category-service
-  spec:
+spec:
   type: NodePort      # <--- Changed from ClusterIP to NodePort
   ports:
     - port: 8082
