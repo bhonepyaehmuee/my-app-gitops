@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: config-server
-          image: your-dockerhub-username/config-server:latest
+          image: bownoed/config-server:dcb1d3753b49f5bdee0a5cd3c20f56a5f120d838
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
