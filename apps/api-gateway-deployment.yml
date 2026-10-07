@@ -18,7 +18,8 @@ spec:
       initContainers:
         - name: wait-for-config-server
           image: bownoed/api-gateway:a1aa4a59545d142cc6c3efbb665b70ff37cc22c7
-          command: ['sh', '-c', 'until nc -z -w 2 config-server 8888; do echo waiting for config-server; sleep 2; done;']
+          command: ['sh', '-c', 'until curl -s http://config-server:8888/actuator/health; do echo waiting for config-server; sleep 2; done;']
+          # command: ['sh', '-c', 'until nc -z -w 2 config-server 8888; do echo waiting for config-server; sleep 2; done;']
       containers:
         - name: api-gateway
           image: bownoed/api-gateway:a1aa4a59545d142cc6c3efbb665b70ff37cc22c7
