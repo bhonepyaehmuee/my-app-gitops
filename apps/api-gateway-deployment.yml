@@ -17,12 +17,11 @@ spec:
     spec:
       initContainers:
         - name: wait-for-config-server
-          image: bownoed/eureka-server:a1aa4a59545d142cc6c3efbb665b70ff37cc22c7
+          image: bownoed/api-gateway:a1aa4a59545d142cc6c3efbb665b70ff37cc22c7
           command:
-          - sh
-          - -c
-          - "until (echo > /dev/tcp/config-server/8888) 2>/dev/null; do echo waiting for config-server; sleep 2; done;"
-
+            - sh
+            - -c
+            - "until (echo > /dev/tcp/config-server/8888) 2>/dev/null; do echo waiting for config-server; sleep 2; done;"
     # spec:
     #   initContainers:
     #   - name: wait-for-config-server
