@@ -70,17 +70,9 @@ metadata:
   labels:
     app: category-service
 spec:
-  type: NodePort      # <--- Changed from ClusterIP to NodePort
+  type: ClusterIP
   ports:
     - port: 8082
       targetPort: 8082
-      nodePort: 30082 # <--- Port accessible on http://localhost:30082
   selector:
     app: category-service
-# spec:
-#   type: ClusterIP
-#   ports:
-#     - port: 8082
-#       targetPort: 8082
-#   selector:
-#     app: category-service

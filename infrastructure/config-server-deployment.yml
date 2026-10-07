@@ -53,20 +53,9 @@ metadata:
   labels:
     app: config-server
 spec:
-  type: NodePort
-
+  type: ClusterIP
+  ports:
+    - port: 8888
+      targetPort: 8888
   selector:
     app: config-server
-
-  ports:
-    - name: http
-      port: 8888
-      targetPort: 8888
-      nodePort: 30888
-# spec:
-#   type: ClusterIP
-#   ports:
-#     - port: 8888
-#       targetPort: 8888
-#   selector:
-#     app: config-server
